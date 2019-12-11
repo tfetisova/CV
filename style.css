@@ -355,6 +355,7 @@ body{
         grid-template-columns: 1fr;
         grid-gap: 7px;
     }
+
     .main-content>.container{
         padding-top: 45px;
     }
@@ -390,6 +391,19 @@ body{
     }
 }
 @media print{
+    *,*:before,*:after,*:first-letter,p:first-line,div:first-line,blockquote:first-line,li:first-line {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a.list-link:after {
+        content: " (" attr(href) ")";
+        font-size: 10px;
+        line-height: 10px;
+        color: #555555 !important;
+        font-weight: normal;
+        font-style: italic;
+    }
+    /*@page { margin: 1cm; }*/
     .page-header>.container{
         padding-top: 20px;
         padding-bottom: 20px;
@@ -397,6 +411,14 @@ body{
     .header-title>.name{
         font-size: 32px;
         line-height: 42px;
+    }
+    .header-contacts{
+        padding-right: 1cm;
+    }
+    .header-contacts{
+        grid-template-columns: 1fr;
+        grid-gap: 5px;
+        width: 55%;
     }
     .header-title>.position{
         font-size: 16px;
@@ -410,8 +432,11 @@ body{
         padding-top: 20px;
     }
     .left-col{
-        width: calc(45% - 20px);
-        margin-right: 20px;
+        width: calc(35% - 30px);
+        margin-right: 30px;
+    }
+    .right-col{
+        width: calc(100% - 35%);
     }
     .section{
         margin-bottom: 15px;
@@ -431,7 +456,7 @@ body{
         line-height: 100%;
     }
     .marked-list.duties>li{
-        line-height: 14px;
+        line-height: 16px;
         font-size: 14px;
 
     }
@@ -439,6 +464,8 @@ body{
         line-height: 120%;
         margin-right: 5px;
         margin-bottom: 5px;
+         color: #000;
+         border: 1px solid #cccccc !important;
     }
     .scales{
         padding-top: 0;
@@ -447,19 +474,24 @@ body{
     }
     .scales-item{
         margin-bottom: 5px;
+        justify-content: flex-start;
     }
     .scales-title{
         width: auto;
+        margin-right: 10px;
     }
     .scale{
     display: none;
 }
     .languages .scale-comment{
-        color: #0a1a13
+        color: #0a1a13;
+        margin-left: 10%;
+        width: auto;
+
     }
     /*right col*/
     .right-col-item{
-        margin-bottom: 15px;
+        margin-bottom: 0;
     }
     .left-side{
         font-size: 16px;
